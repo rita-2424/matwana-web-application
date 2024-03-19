@@ -1,0 +1,45 @@
+<html lang="en">
+
+<%- include('./partials/head.ejs') %> 
+<body>
+
+  <%- include('./partials/nav.ejs') %>
+ <div class="blog content">
+  <section>
+   <h2>Matwana</h2>
+
+<% if(blogs.length > 0) { %>
+   <% blogs.forEach(blog => { %>
+   <h3 class="title"><%= blog.title %></h3>
+   <p class="snippet"><%= blog.snippet %></p>
+
+   <% }) %>
+   <% } else { %>
+    <p>There is no feedback form to display...</p>
+    <% } %>
+   </div>
+  </section>
+</body>
+</table>
+<br>
+ <p form>
+  <label>log in as:</label><br>
+  <a href="views\log in.html" target="_blank">
+    <input type="button" value="Student">
+  </a>
+  <a href="views\log in.html" target="_blank">
+    <input type="button" value="Regular Passenger">
+  </a>
+  <a href="views\log in.html" target="_blank">
+    <input type="button" value="Driver">
+  </a>
+  <a href="views\log in.html" target="_blank">
+    <input type="button" value="Employee">
+  </a>
+ </form>
+</p>
+<br>
+<p></p><br>
+<%- include('./partials/footer.ejs') %>
+</body>
+</html>

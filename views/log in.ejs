@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        .container input[type="text"], .container input[type="password"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .container button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" id="uname" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" id="psw" name="psw" required>
+
+        <button type="submit" onclick="login()">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <a href="<%= ./sign up %>">Sign Up</a>
+    </div>
+    <script>
+        function login() {
+            var username = document.getElementById('uname').value;
+            var password = document.getElementById('psw').value;
+
+            if (username && password) {
+             <% if(locals.authenticated) { %>
+                window.location.href = '<%= indexUrl %>';
+                      <% } else { %>
+               alert('Please enter your username and password!');
+               <% } %>
+              }
+        }
+    </script>
+</body>
+</html>

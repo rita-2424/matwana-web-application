@@ -1,0 +1,22 @@
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+  <%- include('./partials/nav.ejs') %>
+
+<div class="create-blog content">
+  <form>
+    <label for="title">Full Name</label>
+    <input type="text" id="title" required>
+    <label for="snippet">Area of Residence</label>
+    <input type="text" id="snippet" required>
+    <label for="body">What do you think about the Matwana Project so far?:</label>
+    <textarea id="body" required></textarea>
+    <button>Submit</button>
+  </form>
+</div>
+<%- include('./partials/footer.ejs') %>
+
+</body>
+</html> 
